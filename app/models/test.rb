@@ -16,6 +16,6 @@ class Test < ApplicationRecord
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   def self.titles_by_category_title(title)
-    by_category(title).pluck(:title)
+    by_category(title).order(title: :desc).pluck(:title)
   end
 end
