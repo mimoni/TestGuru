@@ -14,7 +14,12 @@ Test.delete_all
 Question.delete_all
 Answer.delete_all
 
-user1, user2 = User.create([{ name: 'Luke' }, { name: 'Anakin' }])
+user1, user2 = User.create(
+    [
+        { name: 'Luke', email: 'luke@gmail.com' },
+        { name: 'Anakin', email: 'anakin@gmail.com'}
+    ]
+)
 
 ruby, js = Category.create([{ title: 'Ruby' }, { title: 'JavaScript' }])
 
@@ -39,17 +44,21 @@ Answer.create(
     { body: 'Юкихиро Мацумото', question_id: q1.id, correct: true },
     { body: 'Гвидо ван Россум', question_id: q1.id, correct: false },
     { body: 'Деннис Ритчи', question_id: q1.id, correct: false },
+    { body: 'Джеймс Гослинг', question_id: q1.id, correct: false },
 
     { body: '1997', question_id: q2.id, correct: false },
     { body: '1996', question_id: q2.id, correct: false },
     { body: '1995', question_id: q2.id, correct: true },
+    { body: '1992', question_id: q2.id, correct: false },
 
     { body: 'Брендан Эйх', question_id: q3.id, correct: true },
     { body: 'Джеймс Гослинг', question_id: q3.id, correct: false },
     { body: 'Расмус Лердорф', question_id: q3.id, correct: false },
+    { body: 'Дэвид Флэнаган', question_id: q3.id, correct: false },
 
     { body: '1999', question_id: q4.id, correct: false },
     { body: '1997', question_id: q4.id, correct: false },
-    { body: '1995', question_id: q4.id, correct: true }
+    { body: '1995', question_id: q4.id, correct: true },
+    { body: '1990', question_id: q4.id, correct: false }
   ]
 )
