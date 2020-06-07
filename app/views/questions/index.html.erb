@@ -1,0 +1,14 @@
+<h1><%= @test.title %></h1>
+
+<ul>
+  <% @questions.each do |question| %>
+    <li>
+      <strong><%= link_to question.body, question %></strong><br />
+      <%= link_to "Удалить", question, method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+<p>
+    <%= link_to "Создать вопрос", new_test_question_path %>
+</p>
